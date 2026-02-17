@@ -1,23 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Automatic Accident Detection System</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>SafeRide Alert</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>Automatic Accident Detection System</h1>
-    <p>AI Based Monitoring Project</p>
+<header class="header">
+  <h2>SafeRide Alert</h2>
+  <p>Automatic Accident Detection System</p>
+</header>
 
-    <button>Learn More</button>
+<section class="monitor-card">
+  <div>
+    <h3>Accident Detection</h3>
+    <p>Real-time monitoring using accelerometer data</p>
+  </div>
+  <span id="status" class="badge inactive">Inactive</span>
 
-    <br><br>
+  <button onclick="startMonitoring()">▶ Start Monitoring</button>
+</section>
 
-    <h2>Project Features</h2>
-    <p>✔ Real time accident detection</p>
-    <p>✔ AI powered monitoring</p>
-    <p>✔ Emergency alert system</p>
+<section class="forms">
 
+  <!-- PROFILE -->
+  <div class="box">
+    <h3>👤 Your Profile</h3>
+    <p class="muted">This information will be shared with emergency contacts during an accident</p>
+
+    <div class="grid">
+      <input placeholder="Your Name *">
+      <input placeholder="Your Phone *">
+      <input placeholder="Blood Type">
+      <input placeholder="Vehicle Number">
+    </div>
+
+    <textarea placeholder="Medical Conditions / Allergies"></textarea>
+    <button class="dark">💾 Save Profile</button>
+  </div>
+
+  <!-- CONTACTS -->
+  <div class="box">
+    <h3>🚨 Emergency Contacts</h3>
+    <p class="muted">Add people to notify in case of an accident</p>
+
+    <input id="cname" placeholder="Name">
+    <input id="cphone" placeholder="Phone Number">
+    <input id="crelation" placeholder="Relationship">
+
+    <button class="dark" onclick="addContact()">➕ Add Contact</button>
+
+    <ul id="contactList"></ul>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
