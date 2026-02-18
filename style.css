@@ -1,34 +1,110 @@
-let monitoring = false;
-let time = 0;
-let timer;
-
-function startMonitoring() {
-  if (!monitoring) {
-    monitoring = true;
-    document.getElementById("status").innerText = "Active";
-    document.getElementById("status").className = "badge active";
-
-    timer = setInterval(() => {
-      time++;
-    }, 1000);
-  }
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
 }
 
-function addContact() {
-  const name = cname.value;
-  const phone = cphone.value;
-  const relation = crelation.value;
+.header {
+  background: white;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
 
-  if (name === "" || phone === "") {
-    alert("Enter name and phone number");
-    return;
-  }
+.monitor-card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+}
 
-  const li = document.createElement("li");
-  li.innerText = `${name} (${relation}) - ${phone}`;
-  contactList.appendChild(li);
+.monitor-card button {
+  width: 100%;
+  padding: 15px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.badge {
+  float: right;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.inactive {
+  background: #eee;
+  color: red;
+}
+
+.active {
+  background: #e6ffe6;
+  color: green;
+}
+
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  min-height: 70px;
+}
+
+.dark {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.muted {
+  color: #666;
+  font-size: 14px;
+}
+
+#contactList {
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+#contactList li {
+  list-style: none;
+  background: #f1f1f1;
+  padding: 8px;
+  margin-top: 6px;
+  border-radius: 6px;
+}
 
   cname.value = "";
   cphone.value = "";
   crelation.value = "";
 }
+
